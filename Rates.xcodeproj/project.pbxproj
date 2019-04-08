@@ -8,19 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		4E204DA92254DD1F00376EA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E204DA82254DD1F00376EA2 /* AppDelegate.swift */; };
-		4E204DAB2254DD1F00376EA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E204DAA2254DD1F00376EA2 /* ViewController.swift */; };
 		4E204DAD2254DD2000376EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E204DAC2254DD2000376EA2 /* Assets.xcassets */; };
 		4E204DB02254DD2000376EA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E204DAE2254DD2000376EA2 /* Main.storyboard */; };
+		4E204DB922566B9100376EA2 /* RatesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E204DB822566B9100376EA2 /* RatesVC.swift */; };
+		4E204DBC2256719E00376EA2 /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E204DBA2256719E00376EA2 /* RateCell.swift */; };
+		4E204DBF2256743A00376EA2 /* RateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E204DBE2256743A00376EA2 /* RateCell.xib */; };
+		4E748791225B3D990092282E /* RateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E748790225B3D990092282E /* RateService.swift */; };
+		4E748793225B3DFF0092282E /* Rates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E748792225B3DFF0092282E /* Rates.swift */; };
+		4E748795225B3EBD0092282E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E748794225B3EBD0092282E /* Constants.swift */; };
+		C41987BE8C161AB0884B36C5 /* Pods_Rates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0659059C9F2C7EAE101D300C /* Pods_Rates.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0659059C9F2C7EAE101D300C /* Pods_Rates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E204DA52254DD1F00376EA2 /* Rates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E204DA82254DD1F00376EA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4E204DAA2254DD1F00376EA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4E204DAC2254DD2000376EA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E204DAF2254DD2000376EA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E204DB12254DD2000376EA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E204DB22254DD2000376EA2 /* Rates.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rates.entitlements; sourceTree = "<group>"; };
+		4E204DB822566B9100376EA2 /* RatesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesVC.swift; sourceTree = "<group>"; };
+		4E204DBA2256719E00376EA2 /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
+		4E204DBE2256743A00376EA2 /* RateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateCell.xib; sourceTree = "<group>"; };
+		4E748790225B3D990092282E /* RateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateService.swift; sourceTree = "<group>"; };
+		4E748792225B3DFF0092282E /* Rates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rates.swift; sourceTree = "<group>"; };
+		4E748794225B3EBD0092282E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8A8306DCFD3031734DA1A524 /* Pods-Rates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rates.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rates/Pods-Rates.debug.xcconfig"; sourceTree = "<group>"; };
+		A7A7B941F4503D4509F5C8D4 /* Pods-Rates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rates.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rates/Pods-Rates.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,17 +42,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C41987BE8C161AB0884B36C5 /* Pods_Rates.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2600FE2129FBDC8CCFD5FF6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A8306DCFD3031734DA1A524 /* Pods-Rates.debug.xcconfig */,
+				A7A7B941F4503D4509F5C8D4 /* Pods-Rates.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4E204D9C2254DD1F00376EA2 = {
 			isa = PBXGroup;
 			children = (
 				4E204DA72254DD1F00376EA2 /* Rates */,
 				4E204DA62254DD1F00376EA2 /* Products */,
+				2600FE2129FBDC8CCFD5FF6A /* Pods */,
+				B7CF79F8F0DEEAC922BCFF74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,13 +80,26 @@
 			isa = PBXGroup;
 			children = (
 				4E204DA82254DD1F00376EA2 /* AppDelegate.swift */,
-				4E204DAA2254DD1F00376EA2 /* ViewController.swift */,
+				4E204DB822566B9100376EA2 /* RatesVC.swift */,
+				4E748790225B3D990092282E /* RateService.swift */,
+				4E748794225B3EBD0092282E /* Constants.swift */,
+				4E748792225B3DFF0092282E /* Rates.swift */,
+				4E204DBA2256719E00376EA2 /* RateCell.swift */,
+				4E204DBE2256743A00376EA2 /* RateCell.xib */,
 				4E204DAC2254DD2000376EA2 /* Assets.xcassets */,
 				4E204DAE2254DD2000376EA2 /* Main.storyboard */,
 				4E204DB12254DD2000376EA2 /* Info.plist */,
 				4E204DB22254DD2000376EA2 /* Rates.entitlements */,
 			);
 			path = Rates;
+			sourceTree = "<group>";
+		};
+		B7CF79F8F0DEEAC922BCFF74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0659059C9F2C7EAE101D300C /* Pods_Rates.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,9 +109,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E204DB52254DD2000376EA2 /* Build configuration list for PBXNativeTarget "Rates" */;
 			buildPhases = (
+				6A331E7210AAC4B09287ABA2 /* [CP] Check Pods Manifest.lock */,
 				4E204DA12254DD1F00376EA2 /* Sources */,
 				4E204DA22254DD1F00376EA2 /* Frameworks */,
 				4E204DA32254DD1F00376EA2 /* Resources */,
+				36C01DA88D656D3CFE61A2F3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -95,6 +136,11 @@
 				TargetAttributes = {
 					4E204DA42254DD1F00376EA2 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -123,18 +169,64 @@
 			files = (
 				4E204DAD2254DD2000376EA2 /* Assets.xcassets in Resources */,
 				4E204DB02254DD2000376EA2 /* Main.storyboard in Resources */,
+				4E204DBF2256743A00376EA2 /* RateCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36C01DA88D656D3CFE61A2F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Rates/Pods-Rates-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rates/Pods-Rates-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A331E7210AAC4B09287ABA2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rates-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4E204DA12254DD1F00376EA2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E204DAB2254DD1F00376EA2 /* ViewController.swift in Sources */,
+				4E204DB922566B9100376EA2 /* RatesVC.swift in Sources */,
+				4E748793225B3DFF0092282E /* Rates.swift in Sources */,
+				4E748791225B3D990092282E /* RateService.swift in Sources */,
 				4E204DA92254DD1F00376EA2 /* AppDelegate.swift in Sources */,
+				4E204DBC2256719E00376EA2 /* RateCell.swift in Sources */,
+				4E748795225B3EBD0092282E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,9 +361,11 @@
 		};
 		4E204DB62254DD2000376EA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A8306DCFD3031734DA1A524 /* Pods-Rates.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Rates/Rates.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KALT4PNG4U;
@@ -282,15 +376,18 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bolar.Rates;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		4E204DB72254DD2000376EA2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7A7B941F4503D4509F5C8D4 /* Pods-Rates.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Rates/Rates.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KALT4PNG4U;
@@ -301,6 +398,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bolar.Rates;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;

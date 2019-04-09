@@ -3,3 +3,5 @@ Rates is a simple macOS app that lives in your menu bar that allows you to quick
 
 ##
 <img width="425" alt="rates_screenshot" src="https://user-images.githubusercontent.com/45484873/55810807-c3d52280-5b05-11e9-8554-1d5a739dfe98.png">
+
+<img src="https://user-images.githubusercontent.com/45484873/55825574-e0805300-5b23-11e9-845d-4e3cc8757d7e.gif" width="425"/>

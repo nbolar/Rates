@@ -53,8 +53,6 @@ class RatesVC: NSViewController {
         fromCurrencyLabel.layer?.borderWidth = 1
         fromCurrencyLabel.layer?.cornerRadius = 5
         fromCurrencyLabel.textColor = NSColor.white
-//        fromCurrencyLabel.placeHolderColor = NSColor.white
-//        fromCurrencyLabel.placeholderAttributedString = NSAttributedString(string: "From", attributes: [NSAttributedString.Key.foregroundColor: NSColor.white])
         fromCurrencyLabel.drawsBackground = false
         
 
@@ -65,7 +63,7 @@ class RatesVC: NSViewController {
         toCurrencyLabel.layer?.borderWidth = 1
         toCurrencyLabel.layer?.cornerRadius = 5
         toCurrencyLabel.textColor = NSColor.white
-//        toCurrencyLabel.placeholderAttributedString = NSAttributedString(string: "To", attributes: [NSAttributedString.Key.foregroundColor: NSColor.white])
+
         toCurrencyLabel.drawsBackground = false
         
         
@@ -93,7 +91,6 @@ class RatesVC: NSViewController {
         fillPopUpButton()
         downloadRates()
         
-//        print(FULL_FORM.count)
         
     }
     
@@ -145,10 +142,6 @@ class RatesVC: NSViewController {
         dateFormatter.timeStyle = .short
         
         updatedString.stringValue = "Prices last updated at : \(dateFormatter.string(from: Date(timeIntervalSince1970: updatedTime)))"
-//        let url = URL(string: "http://data.fixer.io/api/symbols?access_key=9b954de2417aeb0f703b799680e7d4f4")
-//        AF.request(url!).responseJSON { (response) in
-//            print(response)
-//        }
     }
     
     func highlightItems(selected: Bool, atIndexPaths: Set<NSIndexPath>) {
@@ -159,8 +152,6 @@ class RatesVC: NSViewController {
 
             
         }
-        
-//        print(collectionView.selectionIndexes.first ?? "")
         previousIndexPath = atIndexPaths
         unhideToCurrency()
         if buttonPressed == 0
@@ -176,9 +167,7 @@ class RatesVC: NSViewController {
             
             
         }
-        
-        
-        
+
     }
     
     
@@ -205,12 +194,7 @@ class RatesVC: NSViewController {
             guard let item = collectionView.item(at: indexPath as IndexPath) else {continue}
             let fromString = "\((item as! RateCell).rateName.stringValue)"
             currentRate = (item as! RateCell).rateAmt.doubleValue
-            
-//            fromCurrencyValue = (item as! RateCell).rateAmt.doubleValue
-//            fromCurrencyLabel.alignment = NSTextAlignment.center
-            fromCurrencyLabel.placeholderAttributedString = NSAttributedString(string: fromString, attributes: [NSAttributedString.Key.foregroundColor: NSColor.white])
-            
-            
+            fromCurrencyLabel.placeholderAttributedString = NSAttributedString(string: fromString, attributes: [NSAttributedString.Key.foregroundColor: NSColor.white])        
         }
         
     }
@@ -219,7 +203,6 @@ class RatesVC: NSViewController {
     {
         for indexPath in atIndexPaths {
             guard let item = collectionView.item(at: indexPath as IndexPath) else {continue}
-//            print("\((item as! RateCell).rateName.stringValue)")
             let toString = "\((item as! RateCell).rateName.stringValue)"
             conversionRate = (item as! RateCell).rateAmt.doubleValue
             toCurrencyLabel.stringValue = toString
@@ -231,10 +214,8 @@ class RatesVC: NSViewController {
     
     func unhideToCurrency()
     {
-//        collectionView.isSelectable = false
         chooseLabelFrom.isHidden = true
         toCurrency.isHidden = false
-        //        toCurrencyLabel.isHidden = false
         fromCurrencyLabel.isHidden = false
         fromCurrency.isHidden = false
     }

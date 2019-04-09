@@ -685,11 +685,11 @@
             <objects>
                 <viewController title="RatesVC" storyboardIdentifier="RatesVC" id="XfG-lQ-9wD" customClass="RatesVC" customModule="Rates" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="350"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="370"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView wantsLayer="YES" fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzh-h8-nSG">
-                                <rect key="frame" x="20" y="20" width="360" height="201"/>
+                                <rect key="frame" x="20" y="25" width="360" height="201"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="XZb-uJ-8My">
                                     <rect key="frame" x="0.0" y="0.0" width="360" height="201"/>
@@ -716,7 +716,7 @@
                                 </scroller>
                             </scrollView>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LS4-EE-6MZ">
-                                <rect key="frame" x="46" y="293" width="96" height="22"/>
+                                <rect key="frame" x="46" y="296" width="96" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="border" alignment="left" placeholderString="From" drawsBackground="YES" id="28h-mZ-EDk">
                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="6HV-Nc-oc9"/>
@@ -734,7 +734,7 @@
                                 </connections>
                             </textField>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PaK-UB-Dqg">
-                                <rect key="frame" x="20" y="289" width="27" height="30"/>
+                                <rect key="frame" x="20" y="292" width="27" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" image="NSTouchBarGoDownTemplate" imagePosition="only" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="bxd-U0-bCm">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -755,7 +755,7 @@
                                 </textFieldCell>
                             </textField>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pw2-N5-PJN">
-                                <rect key="frame" x="169" y="186" width="63" height="281"/>
+                                <rect key="frame" x="169" y="188" width="63" height="281"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" image="Label" imagePosition="only" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="A6n-iz-D2S">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -767,7 +767,7 @@
                                 </connections>
                             </button>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q4D-6b-FIv">
-                                <rect key="frame" x="255" y="289" width="27" height="30"/>
+                                <rect key="frame" x="256" y="292" width="27" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" image="NSTouchBarGoDownTemplate" imagePosition="only" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="HOn-H4-Deo">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -779,7 +779,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gka-kQ-9Ni">
-                                <rect key="frame" x="284" y="292" width="96" height="22"/>
+                                <rect key="frame" x="284" y="296" width="96" height="22"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" borderStyle="border" alignment="left" title="To" drawsBackground="YES" id="brg-kX-0Ib">
                                     <font key="font" size="13" name="AvenirNext-Regular"/>
@@ -802,7 +802,7 @@
                                 </textFieldCell>
                             </textField>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vrQ-J7-zAI">
-                                <rect key="frame" x="169" y="163" width="63" height="281"/>
+                                <rect key="frame" x="169" y="165" width="63" height="281"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" image="Label" imagePosition="only" alignment="center" refusesFirstResponder="YES" state="on" imageScaling="proportionallyDown" inset="2" id="BfL-De-glp">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -814,22 +814,13 @@
                                 </connections>
                             </button>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1TK-N8-aXT">
-                                <rect key="frame" x="176" y="97" width="48" height="48"/>
+                                <rect key="frame" x="176" y="104" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-8-two-fingers-swipe-left" id="BdI-y1-dmE"/>
                                 <color key="contentTintColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ptw-TF-qMJ">
-                                <rect key="frame" x="114" y="0.0" width="173" height="20"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="The base currency used is USD" id="oIg-ZH-rXm">
-                                    <font key="font" size="12" name="AvenirNext-Regular"/>
-                                    <color key="textColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <color key="backgroundColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.61568627450000002" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                </textFieldCell>
-                            </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BZa-qb-Gvv">
-                                <rect key="frame" x="20" y="229" width="360" height="22"/>
+                                <rect key="frame" x="20" y="234" width="360" height="22"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" borderStyle="bezel" alignment="center" placeholderString="Search currency" bezelStyle="round" id="Xeo-2M-0vy">
                                     <font key="font" size="13" name="AvenirNext-Regular"/>
@@ -841,14 +832,70 @@
                                 </connections>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="loB-zV-Q99">
-                                <rect key="frame" x="29" y="229" width="17" height="21"/>
+                                <rect key="frame" x="29" y="234" width="17" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="left" imageScaling="proportionallyDown" image="NSTouchBarSearchTemplate" id="TKI-4f-jmZ"/>
                                 <color key="contentTintColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="D9x-p6-zL5">
+                                <rect key="frame" x="377" y="347" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="18" id="i4n-IT-mt9"/>
+                                    <constraint firstAttribute="height" constant="18" id="rUE-bR-T3O"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSStopProgressFreestandingTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="4Nf-61-kY5">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <color key="contentTintColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="quitButtonClicked:" target="XfG-lQ-9wD" id="xR2-S9-aPw"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ptw-TF-qMJ">
+                                <rect key="frame" x="124" y="0.0" width="81" height="20"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Base currency" id="oIg-ZH-rXm">
+                                    <font key="font" size="12" name="AvenirNext-Regular"/>
+                                    <color key="textColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.61568627450000002" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cdn-HU-4yn">
+                                <rect key="frame" x="201" y="-1" width="77" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="WUT-9r-Fd0" id="u2U-kF-P5W">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="HmH-pM-6rj">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="WUT-9r-Fd0"/>
+                                            <menuItem title="Item 2" id="Lco-UK-laO"/>
+                                            <menuItem title="Item 3" id="smT-2w-Vye"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="popUpButtonClicked:" target="XfG-lQ-9wD" id="naJ-nm-tI1"/>
+                                </connections>
+                            </popUpButton>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wrV-1D-f30">
+                                <rect key="frame" x="27" y="347" width="344" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Label" id="4LE-gP-rWK">
+                                    <font key="font" size="11" name="AvenirNext-Regular"/>
+                                    <color key="textColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.61568627450000002" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="D9x-p6-zL5" secondAttribute="trailing" constant="5" id="Pfe-je-azG"/>
+                            <constraint firstItem="D9x-p6-zL5" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="5" id="fD5-sN-Qhh"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="baseCurrencyButton" destination="cdn-HU-4yn" id="IXh-cw-LoD"/>
                         <outlet property="chooseLabel" destination="Nu4-ed-ijo" id="Cl6-sd-PRB"/>
                         <outlet property="chooseLabelFrom" destination="kZJ-ly-3X0" id="OQ8-BY-w6J"/>
                         <outlet property="chooseLabelTo" destination="Nu4-ed-ijo" id="bpT-Zm-hl5"/>
@@ -861,6 +908,7 @@
                         <outlet property="selectFirst" destination="pw2-N5-PJN" id="AFB-g9-TiK"/>
                         <outlet property="toCurrency" destination="q4D-6b-FIv" id="y2d-tn-4H3"/>
                         <outlet property="toCurrencyLabel" destination="gka-kQ-9Ni" id="dGd-vj-F8Z"/>
+                        <outlet property="updatedString" destination="wrV-1D-f30" id="ZeM-EH-Rtc"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -870,6 +918,7 @@
     </scenes>
     <resources>
         <image name="Label" width="579" height="281"/>
+        <image name="NSStopProgressFreestandingTemplate" width="14" height="14"/>
         <image name="NSTouchBarGoDownTemplate" width="16" height="30"/>
         <image name="NSTouchBarSearchTemplate" width="19" height="30"/>
         <image name="icon-8-two-fingers-swipe-left" width="32" height="32"/>

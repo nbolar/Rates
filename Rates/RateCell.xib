@@ -13,7 +13,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SbW-4M-djd">
-                    <rect key="frame" x="18" y="10" width="70" height="23"/>
+                    <rect key="frame" x="10" y="10" width="70" height="23"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="Rate Name" id="DpW-nh-K4v">
                         <font key="font" size="13" name="AvenirNext-Regular"/>
@@ -31,20 +31,26 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KBX-Jv-MBX">
-                    <rect key="frame" x="10" y="0.0" width="171" height="19"/>
+                    <rect key="frame" x="10" y="-2" width="171" height="19"/>
                     <autoresizingMask key="autoresizingMask"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Currency Full Form" id="bub-D6-gBW">
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Currency Full Form" id="bub-D6-gBW">
                         <font key="font" size="10" name="AvenirNext-Regular"/>
-                        <color key="textColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="textColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="0.59674657534246578" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                     </textFieldCell>
                 </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="faj-Up-43V">
+                    <rect key="frame" x="41" y="17" width="27" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="0Ez-E3-xod"/>
+                </imageView>
             </subviews>
-            <point key="canvasLocation" x="142" y="154"/>
+            <point key="canvasLocation" x="142" y="153.5"/>
         </customView>
         <collectionViewItem title="RateCell" nibName="RateCell" identifier="RateCell" id="fPx-QN-axT" customClass="RateCell" customModule="Rates" customModuleProvider="target">
             <connections>
                 <outlet property="currencyFullForm" destination="KBX-Jv-MBX" id="2fd-jq-MOM"/>
+                <outlet property="flagView" destination="faj-Up-43V" id="Czg-lo-3xI"/>
                 <outlet property="rateAmt" destination="vdj-P6-TVa" id="x6C-OK-7hd"/>
                 <outlet property="rateName" destination="SbW-4M-djd" id="aYH-8N-60W"/>
                 <outlet property="view" destination="c22-O7-iKe" id="GJb-La-gAz"/>

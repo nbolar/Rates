@@ -48,16 +48,17 @@ class Rates {
     class func loadRatesFromData(_ APIData: Data) -> [Rates]{
     
         var rates = [Rates]()
-        var usdAmt : Double!
+        var baseAmt : Double!
         let json = try! JSON(data: APIData)
-        
+        updatedTime = json["timestamp"].doubleValue
         if let list = json["rates"].dictionary{
             let sortedList = list.sorted(by: <)
             for (key, value) in sortedList
             {
                 let newRates = Rates()
-                usdAmt = list["USD"]?.doubleValue
-                newRates.rateAmt = "\(String(format: "%0.4f",(Double(value.doubleValue) / usdAmt)))"
+                baseAmt = list[baseCurrency]?.doubleValue
+                baseCurrencyValue = baseAmt
+                newRates.rateAmt = "\(String(format: "%0.4f",(Double(value.doubleValue) / baseAmt)))"
                 newRates.rateName = "\(key)"
                 if FULL_FORM.count != 0
                 {

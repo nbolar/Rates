@@ -18,3 +18,6 @@ var API_URL = "http://data.fixer.io/api/latest?access_key=\(API_KEY)"
 var API_URL_FULL_FORM = "http://data.fixer.io/api/symbols?access_key=\(API_KEY)"
 var FULL_FORM = [String : String]()
 var count = 0
+var baseCurrency = "USD"
+var baseCurrencyValue : Double!
+var updatedTime = Double()

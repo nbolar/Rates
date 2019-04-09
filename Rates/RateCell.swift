@@ -14,6 +14,7 @@ class RateCell: NSCollectionViewItem {
     @IBOutlet weak var rateName: NSTextField!
     @IBOutlet weak var rateAmt: NSTextField!
     @IBOutlet weak var currencyFullForm: NSTextField!
+    @IBOutlet weak var flagView: NSImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class RateCell: NSCollectionViewItem {
         rateName.stringValue = "\(rateCell.rateName)"
         rateAmt.stringValue = "\(rateCell.rateAmt)"
         currencyFullForm.stringValue = "\(rateCell.rateFullForm)"
+        flagView.image = NSImage(named: "\(rateCell.rateName)")
         
 //        if count < FULL_FORM.count
 //        {

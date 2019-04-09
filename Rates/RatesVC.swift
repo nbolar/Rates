@@ -23,11 +23,14 @@ class RatesVC: NSViewController {
     @IBOutlet weak var convertButton: NSButton!
     @IBOutlet weak var gestureImage: NSImageView!
     @IBOutlet weak var searchBar: NSTextField!
+    @IBOutlet weak var baseCurrencyButton: NSPopUpButton!
+    @IBOutlet weak var updatedString: NSTextField!
     
     var previousIndexPath : Set<NSIndexPath>!
     var buttonPressed = 2
     var fromCurrencyValue : Double!
     var conversionRate : Double!
+    var currentRate : Double!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +38,8 @@ class RatesVC: NSViewController {
         self.view.wantsLayer = true
         self.view.layer?.backgroundColor = .clear
         let image = NSImage(named: "rates_background")
-        let fieldBackgroundColor = NSColor(
-            calibratedHue: 230/360,
-            saturation: 0.35,
-            brightness: 0.85,
-            alpha: 0.3)
+        self.view.layer?.contents = image
+        self.view.layer?.cornerRadius = 8
         
         gestureImage.isHidden = false
         gestureImage.wantsLayer = true
@@ -77,8 +77,7 @@ class RatesVC: NSViewController {
         searchBar.textColor = NSColor.white
         searchBar.drawsBackground = false
         
-        self.view.layer?.contents = image
-        self.view.layer?.cornerRadius = 8
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.allowsMultipleSelection = false
@@ -91,11 +90,35 @@ class RatesVC: NSViewController {
         convertButton.isHidden = true
         convertButton.isEnabled = false
         
+        fillPopUpButton()
         downloadRates()
         
 //        print(FULL_FORM.count)
         
     }
+    
+    func fillPopUpButton()
+    {
+        
+        baseCurrencyButton.removeAllItems()
+        let sortedList = FULL_FORM.sorted(by: <)
+        for (key,_) in sortedList{
+            baseCurrencyButton.addItems(withTitles: [key])
+        }
+        baseCurrencyButton.selectItem(withTitle: baseCurrency)
+        
+    }
+    
+    @IBAction func popUpButtonClicked(_ sender: NSPopUpButton) {
+        baseCurrency = baseCurrencyButton.titleOfSelectedItem ?? "USD"
+        RateService.instance.downloadForecast(completed: {
+            NotificationCenter.default.post(name: NOTIF_DOWNLOAD_COMPLETE, object: nil)
+        })
+        collectionView.reloadData()
+        let indexItem = NSIndexPath(forItem: 0, inSection: 0)
+        collectionView.animator().scrollToItems(at: [indexItem as IndexPath] , scrollPosition: .right)
+    }
+    
     @objc func dismissText()
     {
         gestureImage.isHidden = true
@@ -117,6 +140,11 @@ class RatesVC: NSViewController {
     {
 
         collectionView.reloadData()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .none
+        dateFormatter.timeStyle = .short
+        
+        updatedString.stringValue = "Prices last updated at : \(dateFormatter.string(from: Date(timeIntervalSince1970: updatedTime)))"
 //        let url = URL(string: "http://data.fixer.io/api/symbols?access_key=9b954de2417aeb0f703b799680e7d4f4")
 //        AF.request(url!).responseJSON { (response) in
 //            print(response)
@@ -139,11 +167,14 @@ class RatesVC: NSViewController {
         {
             fromMoney(atIndexPaths: previousIndexPath)
             chooseLabelFrom.isHidden = true
+            toCurrencyLabel.isHidden = false
             
         }else if buttonPressed == 1
         {
-            toMoney(atIndexPaths: previousIndexPath)
             chooseLabelTo.isHidden = true
+            toMoney(atIndexPaths: previousIndexPath)
+            
+            
         }
         
         
@@ -173,6 +204,8 @@ class RatesVC: NSViewController {
         for indexPath in atIndexPaths {
             guard let item = collectionView.item(at: indexPath as IndexPath) else {continue}
             let fromString = "\((item as! RateCell).rateName.stringValue)"
+            currentRate = (item as! RateCell).rateAmt.doubleValue
+            
 //            fromCurrencyValue = (item as! RateCell).rateAmt.doubleValue
 //            fromCurrencyLabel.alignment = NSTextAlignment.center
             fromCurrencyLabel.placeholderAttributedString = NSAttributedString(string: fromString, attributes: [NSAttributedString.Key.foregroundColor: NSColor.white])
@@ -220,7 +253,7 @@ class RatesVC: NSViewController {
     }
     @IBAction func performConversion(_ sender: Any) {
         if Double(fromCurrencyLabel.stringValue) != nil{
-            toCurrencyLabel.stringValue = "\(String(format: "%0.4f", fromCurrencyLabel.doubleValue * conversionRate))"
+            toCurrencyLabel.stringValue = "\(String(format: "%0.4f", (fromCurrencyLabel.doubleValue / currentRate) * conversionRate))"
         }
         
         
@@ -231,12 +264,16 @@ class RatesVC: NSViewController {
         count = 0
         
         let sortedList = FULL_FORM.sorted(by: <)
-        for (key,_) in sortedList{
+        for (key,value) in sortedList{
             if searchBar.stringValue.count != 0{
                 if key == searchBar.stringValue.uppercased(){
                     scroll(position: count)
                     break
                     
+                }else if value.uppercased() == searchBar.stringValue.uppercased()
+                {
+                    scroll(position: count)
+                    break
                 }
                 count = count + 1
             }
@@ -266,6 +303,11 @@ class RatesVC: NSViewController {
         let item = collectionView.item(at: itemIndex as IndexPath)
         (item as! RateCell).setHighlight(selected: false)
     }
+    
+    @IBAction func quitButtonClicked(_ sender: NSButton) {
+        NSApp.terminate(nil)
+    }
+    
 }
 
 

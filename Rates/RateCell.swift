@@ -35,18 +35,7 @@ class RateCell: NSCollectionViewItem {
         rateName.stringValue = "\(rateCell.rateName)"
         rateAmt.stringValue = "\(rateCell.rateAmt)"
         currencyFullForm.stringValue = "\(rateCell.rateFullForm)"
-        flagView.image = NSImage(named: "\(rateCell.rateName)")
-        
-//        if count < FULL_FORM.count
-//        {
-//            currencyFullForm.stringValue = FULL_FORM[count]
-//            count = count + 1
-//        } else {
-//            NotificationCenter.default.removeObserver(self, name: NOTIF_DOWNLOAD_COMPLETE, object: nil)
-//        }
-        
-
-        
+        flagView.image = NSImage(named: "\(rateCell.rateName)")        
         
     }
     

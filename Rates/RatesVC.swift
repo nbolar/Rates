@@ -234,7 +234,7 @@ class RatesVC: NSViewController {
     }
     @IBAction func performConversion(_ sender: Any) {
         if (fromCurrencyLabel.stringValue.count) != 0{
-            toCurrencyLabel.stringValue = "\(String(format: "%0.4f", ((fromCurrencyLabel.doubleValue) / currentRate) * conversionRate))"
+            toCurrencyLabel.doubleValue = Double(String(format: "%0.4f", ((fromCurrencyLabel.doubleValue) / currentRate) * conversionRate)) ?? 0
         }
         
         

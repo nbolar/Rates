@@ -41,6 +41,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
             }
         }
+        
+        if UserDefaults.standard.bool(forKey: "Gesture") == false{
+            UserDefaults.standard.set(1, forKey: "Gesture")
+        }
 
         
     }

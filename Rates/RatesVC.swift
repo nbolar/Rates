@@ -25,6 +25,8 @@ class RatesVC: NSViewController {
     @IBOutlet weak var searchBar: NSTextField!
     @IBOutlet weak var baseCurrencyButton: NSPopUpButton!
     @IBOutlet weak var updatedString: NSTextField!
+    @IBOutlet weak var fromLabel: NSTextField!
+    @IBOutlet weak var toLabel: NSTextField!
     
     var previousIndexPath : Set<NSIndexPath>!
     var buttonPressed = 2
@@ -41,11 +43,7 @@ class RatesVC: NSViewController {
         self.view.layer?.contents = image
         self.view.layer?.cornerRadius = 8
         
-        gestureImage.isHidden = false
-        gestureImage.wantsLayer = true
-        gestureImage.layer?.backgroundColor = CGColor.init(gray: 0.1, alpha: 0.5)
-        gestureImage.layer?.cornerRadius = 5
-        Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.dismissText), userInfo: nil, repeats: false)
+
         
         fromCurrencyLabel.wantsLayer = true
         fromCurrencyLabel.layer?.backgroundColor = .clear
@@ -58,13 +56,18 @@ class RatesVC: NSViewController {
 
         
         toCurrencyLabel.wantsLayer = true
+        toCurrencyLabel.isEditable = false
         toCurrencyLabel.layer?.backgroundColor = .clear
         toCurrencyLabel.layer?.borderColor = .white
         toCurrencyLabel.layer?.borderWidth = 1
         toCurrencyLabel.layer?.cornerRadius = 5
         toCurrencyLabel.textColor = NSColor.white
-
+        toCurrencyLabel.placeholderAttributedString = NSAttributedString(string: "To", attributes: [NSAttributedString.Key.foregroundColor: NSColor.white])
         toCurrencyLabel.drawsBackground = false
+        let gesture = NSClickGestureRecognizer(target: self, action: #selector(toButtonClicked(_:)))
+        gesture.numberOfClicksRequired = 1
+        toCurrencyLabel.addGestureRecognizer(gesture)
+        
         
         
         searchBar.wantsLayer = true
@@ -87,12 +90,16 @@ class RatesVC: NSViewController {
         fromCurrency.isHidden = true
         convertButton.isHidden = true
         convertButton.isEnabled = false
-        
+        fromLabel.isHidden = true
+        toLabel.isHidden = true
         fillPopUpButton()
         downloadRates()
         
         
     }
+    
+
+    
     
     func fillPopUpButton()
     {
@@ -111,6 +118,17 @@ class RatesVC: NSViewController {
         RateService.instance.downloadForecast(completed: {
             NotificationCenter.default.post(name: NOTIF_DOWNLOAD_COMPLETE, object: nil)
         })
+        
+        
+        if UserDefaults.standard.integer(forKey: "Gesture") == 1
+        {
+            UserDefaults.standard.set(2, forKey: "Gesture")
+            gestureImage.isHidden = false
+            gestureImage.wantsLayer = true
+            gestureImage.layer?.backgroundColor = CGColor.init(gray: 0.1, alpha: 0.5)
+            gestureImage.layer?.cornerRadius = 5
+            Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.dismissText), userInfo: nil, repeats: false)
+        }
         collectionView.reloadData()
         let indexItem = NSIndexPath(forItem: 0, inSection: 0)
         collectionView.animator().scrollToItems(at: [indexItem as IndexPath] , scrollPosition: .right)
@@ -142,6 +160,7 @@ class RatesVC: NSViewController {
         dateFormatter.timeStyle = .short
         
         updatedString.stringValue = "Prices last updated at : \(dateFormatter.string(from: Date(timeIntervalSince1970: updatedTime)))"
+
     }
     
     func highlightItems(selected: Bool, atIndexPaths: Set<NSIndexPath>) {
@@ -194,18 +213,30 @@ class RatesVC: NSViewController {
             guard let item = collectionView.item(at: indexPath as IndexPath) else {continue}
             let fromString = "\((item as! RateCell).rateName.stringValue)"
             currentRate = (item as! RateCell).rateAmt.doubleValue
-            fromCurrencyLabel.placeholderAttributedString = NSAttributedString(string: fromString, attributes: [NSAttributedString.Key.foregroundColor: NSColor.white])        
+            
+//            fromCurrencyValue = (item as! RateCell).rateAmt.doubleValue
+//            fromCurrencyLabel.alignment = NSTextAlignment.center
+            fromCurrencyLabel.placeholderAttributedString = NSAttributedString(string: fromString, attributes: [NSAttributedString.Key.foregroundColor: NSColor.white])
+            fromLabel.isHidden = false
+            fromLabel.stringValue = fromString
+            fromLabel.textColor = .gray
+            
+            
         }
         
     }
     
     func toMoney(atIndexPaths: Set<NSIndexPath>)
     {
+        fromCurrencyLabel.becomeFirstResponder()
         for indexPath in atIndexPaths {
             guard let item = collectionView.item(at: indexPath as IndexPath) else {continue}
             let toString = "\((item as! RateCell).rateName.stringValue)"
             conversionRate = (item as! RateCell).rateAmt.doubleValue
             toCurrencyLabel.stringValue = toString
+            toLabel.isHidden = false
+            toLabel.stringValue = toString
+            toLabel.textColor = .gray
             
             
         }
@@ -229,16 +260,12 @@ class RatesVC: NSViewController {
         convertButton.isHidden = false
         convertButton.isEnabled = true
 
-        
-
     }
+    
     @IBAction func performConversion(_ sender: Any) {
         if (fromCurrencyLabel.stringValue.count) != 0{
             toCurrencyLabel.doubleValue = Double(String(format: "%0.4f", ((fromCurrencyLabel.doubleValue) / currentRate) * conversionRate)) ?? 0
         }
-        
-        
-        
     }
     
     @IBAction func searchItem(_ sender: Any) {
@@ -247,11 +274,11 @@ class RatesVC: NSViewController {
         let sortedList = FULL_FORM.sorted(by: <)
         for (key,value) in sortedList{
             if searchBar.stringValue.count != 0{
-                if key == searchBar.stringValue.uppercased(){
+                if key.contains(searchBar.stringValue.uppercased()){
                     scroll(position: count)
                     break
                     
-                }else if value.uppercased() == searchBar.stringValue.uppercased()
+                }else if value.contains(searchBar.stringValue.capitalized)
                 {
                     scroll(position: count)
                     break
@@ -288,6 +315,8 @@ class RatesVC: NSViewController {
     @IBAction func quitButtonClicked(_ sender: NSButton) {
         NSApp.terminate(nil)
     }
+    
+    
     
 }
 
@@ -327,7 +356,8 @@ extension RatesVC: NSCollectionViewDelegate, NSCollectionViewDataSource, NSColle
     func collectionView(_ collectionView: NSCollectionView, didDeselectItemsAt indexPaths: Set<IndexPath>) {
         highlightItems(selected: false, atIndexPaths: indexPaths as Set<NSIndexPath>)
     }
-    
+
+
 
 
 }

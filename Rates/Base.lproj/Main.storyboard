@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -619,7 +619,7 @@
                                         <menuItem title="Show Sidebar" keyEquivalent="s" id="kIP-vf-haE">
                                             <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                             <connections>
-                                                <action selector="toggleSourceList:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
+                                                <action selector="toggleSidebar:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Enter Full Screen" keyEquivalent="f" id="4J7-dP-txa">
@@ -781,7 +781,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gka-kQ-9Ni">
                                 <rect key="frame" x="284" y="296" width="96" height="22"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" borderStyle="border" alignment="left" title="To" drawsBackground="YES" id="brg-kX-0Ib">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" borderStyle="border" alignment="left" placeholderString="To" drawsBackground="YES" id="brg-kX-0Ib">
                                     <font key="font" size="13" name="AvenirNext-Regular"/>
                                     <color key="textColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="backgroundColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.61568627450000002" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
@@ -822,7 +822,7 @@
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BZa-qb-Gvv">
                                 <rect key="frame" x="20" y="234" width="360" height="22"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" borderStyle="bezel" alignment="center" placeholderString="Search currency" bezelStyle="round" id="Xeo-2M-0vy">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" borderStyle="bezel" alignment="center" placeholderString="Type currency symbol to search e.g. USD" bezelStyle="round" id="Xeo-2M-0vy">
                                     <font key="font" size="13" name="AvenirNext-Regular"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -864,12 +864,12 @@
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cdn-HU-4yn">
                                 <rect key="frame" x="201" y="-1" width="77" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="WUT-9r-Fd0" id="u2U-kF-P5W">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="u2U-kF-P5W">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="HmH-pM-6rj">
                                         <items>
-                                            <menuItem title="Item 1" state="on" id="WUT-9r-Fd0"/>
+                                            <menuItem title="Item 1" id="WUT-9r-Fd0"/>
                                             <menuItem title="Item 2" id="Lco-UK-laO"/>
                                             <menuItem title="Item 3" id="smT-2w-Vye"/>
                                         </items>
@@ -888,6 +888,24 @@
                                     <color key="backgroundColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.61568627450000002" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textFieldCell>
                             </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tsn-3T-LR0">
+                                <rect key="frame" x="282" y="276" width="32" height="19"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="7Kw-bC-xSs">
+                                    <font key="font" size="11" name="AvenirNext-Regular"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LaG-0N-gKH">
+                                <rect key="frame" x="44" y="276" width="32" height="19"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="aCK-d4-sTK">
+                                    <font key="font" size="11" name="AvenirNext-Regular"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="D9x-p6-zL5" secondAttribute="trailing" constant="5" id="Pfe-je-azG"/>
@@ -903,11 +921,13 @@
                         <outlet property="convertButton" destination="vrQ-J7-zAI" id="rQG-ie-JxU"/>
                         <outlet property="fromCurrency" destination="PaK-UB-Dqg" id="GBb-A4-njp"/>
                         <outlet property="fromCurrencyLabel" destination="LS4-EE-6MZ" id="F41-0f-n70"/>
+                        <outlet property="fromLabel" destination="LaG-0N-gKH" id="j5B-ri-bWO"/>
                         <outlet property="gestureImage" destination="1TK-N8-aXT" id="DpA-PC-bvg"/>
                         <outlet property="searchBar" destination="BZa-qb-Gvv" id="8fW-WX-Key"/>
                         <outlet property="selectFirst" destination="pw2-N5-PJN" id="AFB-g9-TiK"/>
                         <outlet property="toCurrency" destination="q4D-6b-FIv" id="y2d-tn-4H3"/>
                         <outlet property="toCurrencyLabel" destination="gka-kQ-9Ni" id="dGd-vj-F8Z"/>
+                        <outlet property="toLabel" destination="Tsn-3T-LR0" id="JLH-Km-GEf"/>
                         <outlet property="updatedString" destination="wrV-1D-f30" id="ZeM-EH-Rtc"/>
                     </connections>
                 </viewController>
@@ -921,6 +941,6 @@
         <image name="NSStopProgressFreestandingTemplate" width="14" height="14"/>
         <image name="NSTouchBarGoDownTemplate" width="16" height="30"/>
         <image name="NSTouchBarSearchTemplate" width="19" height="30"/>
-        <image name="icon-8-two-fingers-swipe-left" width="32" height="32"/>
+        <image name="icon-8-two-fingers-swipe-left" width="64" height="64"/>
     </resources>
 </document>

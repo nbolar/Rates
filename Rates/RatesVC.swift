@@ -17,7 +17,6 @@ class RatesVC: NSViewController {
     @IBOutlet weak var toCurrency: NSButton!
     @IBOutlet weak var fromCurrencyLabel: NSTextField!
     @IBOutlet weak var toCurrencyLabel: NSTextField!
-    @IBOutlet weak var selectFirst: NSButton!
     @IBOutlet weak var chooseLabelFrom: NSTextField!
     @IBOutlet weak var chooseLabelTo: NSTextField!
     @IBOutlet weak var convertButton: NSButton!
@@ -52,7 +51,7 @@ class RatesVC: NSViewController {
         fromCurrencyLabel.layer?.cornerRadius = 5
         fromCurrencyLabel.textColor = NSColor.white
         fromCurrencyLabel.drawsBackground = false
-        
+        fromCurrencyLabel.placeholderAttributedString = NSAttributedString(string: "From", attributes: [NSAttributedString.Key.foregroundColor: NSColor.white])
 
         
         toCurrencyLabel.wantsLayer = true
@@ -86,8 +85,6 @@ class RatesVC: NSViewController {
         chooseLabelFrom.isHidden = true
         toCurrency.isHidden = true
         toCurrencyLabel.isHidden = true
-        fromCurrencyLabel.isHidden = true
-        fromCurrency.isHidden = true
         convertButton.isHidden = true
         convertButton.isEnabled = false
         fromLabel.isHidden = true
@@ -200,8 +197,6 @@ class RatesVC: NSViewController {
         collectionView.isSelectable = true
         toCurrency.isHidden = true
         toCurrencyLabel.isHidden = true
-        selectFirst.isHidden = true
-        selectFirst.isEnabled = false
         buttonPressed = 0
         
         

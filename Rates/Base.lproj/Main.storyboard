@@ -718,7 +718,7 @@
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LS4-EE-6MZ">
                                 <rect key="frame" x="46" y="296" width="96" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="border" alignment="left" placeholderString="From" drawsBackground="YES" id="28h-mZ-EDk">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" state="on" borderStyle="border" alignment="left" placeholderString="From" drawsBackground="YES" id="28h-mZ-EDk">
                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="6HV-Nc-oc9"/>
                                     <font key="font" size="13" name="AvenirNext-Regular"/>
                                     <color key="textColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -754,18 +754,6 @@
                                     <color key="backgroundColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.61568627450000002" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textFieldCell>
                             </textField>
-                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pw2-N5-PJN">
-                                <rect key="frame" x="169" y="188" width="63" height="281"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" image="Label" imagePosition="only" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="A6n-iz-D2S">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <color key="contentTintColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="fromButtonClicked:" target="XfG-lQ-9wD" id="lap-uf-d7Y"/>
-                                </connections>
-                            </button>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q4D-6b-FIv">
                                 <rect key="frame" x="256" y="292" width="27" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -924,7 +912,6 @@
                         <outlet property="fromLabel" destination="LaG-0N-gKH" id="j5B-ri-bWO"/>
                         <outlet property="gestureImage" destination="1TK-N8-aXT" id="DpA-PC-bvg"/>
                         <outlet property="searchBar" destination="BZa-qb-Gvv" id="8fW-WX-Key"/>
-                        <outlet property="selectFirst" destination="pw2-N5-PJN" id="AFB-g9-TiK"/>
                         <outlet property="toCurrency" destination="q4D-6b-FIv" id="y2d-tn-4H3"/>
                         <outlet property="toCurrencyLabel" destination="gka-kQ-9Ni" id="dGd-vj-F8Z"/>
                         <outlet property="toLabel" destination="Tsn-3T-LR0" id="JLH-Km-GEf"/>

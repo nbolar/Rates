@@ -43,7 +43,7 @@ class RatesVC: NSViewController {
         self.view.layer?.cornerRadius = 8
         
 
-        
+    
         fromCurrencyLabel.wantsLayer = true
         fromCurrencyLabel.layer?.backgroundColor = .clear
         fromCurrencyLabel.layer?.borderColor = .white

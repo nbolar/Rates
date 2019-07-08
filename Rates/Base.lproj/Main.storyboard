@@ -734,13 +734,13 @@
                                 </connections>
                             </textField>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PaK-UB-Dqg">
-                                <rect key="frame" x="20" y="292" width="27" height="30"/>
+                                <rect key="frame" x="20" y="292" width="27" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" image="NSTouchBarGoDownTemplate" imagePosition="only" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="bxd-U0-bCm">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <buttonCell key="cell" type="disclosureTriangle" bezelStyle="disclosure" image="NSTouchBarGoDownTemplate" imagePosition="only" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="bxd-U0-bCm">
+                                    <behavior key="behavior" pushIn="YES" changeBackground="YES" changeGray="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <color key="contentTintColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="contentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="fromButtonClicked:" target="XfG-lQ-9wD" id="iKQ-gf-Bxw"/>
                                 </connections>
